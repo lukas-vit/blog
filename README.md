@@ -1,1 +1,1 @@
-# blog
+# Vlasní stránka
