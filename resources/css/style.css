@@ -1,0 +1,766 @@
+/* ----------------------------------------------  */
+/* BASIC SETUP  */
+/* ---------------------------------------------- */
+
+/*     rgb(160, 228, 1) */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.row{
+    margin-left: 5px;
+}
+html,body{
+    background-color: rgba(254, 254, 254,);
+    color: #000;
+    font-family:'Lato', 'Arial', 'sans-serif';
+    font-weight: 300;
+    font-size: 21px;
+    text-rendering: optimizeLegibility;
+    overflow-x: auto;
+    line-height: 1.15;
+    scroll-behavior: smooth;
+    
+}
+
+.clearfix{zoom:1}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ----------------------------------------------  */
+/* REUSABLE COMPONENTS  */
+/* ---------------------------------------------- */
+
+.row{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+section{
+    padding: 80px;
+}
+
+.box{
+    padding: 1%;
+}
+p{
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: 100px;
+
+}
+
+/* ----------------------------------------------  */
+/* HEADINGS  */
+/* ---------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4{
+    text-transform: uppercase;
+    color: #000;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 200%;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+
+}
+
+h2{
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 210%;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+
+
+}
+
+h3{
+    font-weight: 400;
+    font-size: 120%;
+    margin-bottom:15px;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+h4{
+    margin-bottom: 20px;
+}
+h5{
+    
+    font-weight: 300;
+    font-size: 150%;
+    line-height: 40px;
+    padding-bottom: 10px;
+}
+.long-copy,
+.long-copy-2{
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+.long-copy{
+    margin-bottom: 30px;
+}
+
+/* ----------------------------------------------  */
+/* HEADER  */
+/* ---------------------------------------------- */
+header{
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.logo1{
+    height: 100px;
+    width: auto;
+    float: left;
+}
+.logo2{
+     height: 80px;
+     margin-top: 10px;
+     padding: 5px;
+}
+.front-box{
+    float:left;
+    font-size: 85%;
+    padding-top: 130px;
+    
+}
+
+.front-logo{
+    float: right;
+    padding: 10px 60px;
+    
+    
+}
+.front-logo img{
+    width: 115%;
+    
+}
+
+/* ----------------------------------------------  */
+/* LOADER  */
+/* ---------------------------------------------- */
+.loader-container{
+     width: 100%;
+     height: 100vh;
+     background-color: black;
+     position: fixed;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 9999999;
+}
+
+.loader{
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: #3498db;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loader 1.2s linear infinite;
+}
+@keyframes loader{
+    25%{
+        color: #2ecc71;
+    }
+    50%{
+        color: #f1c40f;
+    }
+    75%{
+        color: #e74e3c;
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+/* ----------------------------------------------  */
+/* NAVIGATION  */
+/* ---------------------------------------------- */
+.navbar{
+    position: fixed;
+    background-color:transparent;
+    width: 100%;
+    padding: 30px 0;
+    top: 0;
+    z-index: 999;
+    transition: .3s linear;
+}
+.inner-width{
+    margin:auto;
+    padding: 0 40px;
+}
+.navbar .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 73px;
+    height: 75px;
+    background-image: url(img/logoLV_white.png);
+    background-size: contain;
+}
+.menu-toggler{
+    background: none;
+    width: 30px;
+    border:none;
+    cursor: pointer;
+    position: relative;
+    outline:none;
+    z-index: 999;
+    display: none;
+}
+.menu-toggler span{
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    position: relative;
+    transition: .3s linear;
+}
+.navbar-menu a{
+    color:#fff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .2s linear;
+    
+}
+.navbar-menu a:hover{
+    color:rgb(160, 228, 1) !important;
+
+}
+/* STICKY */
+.sticky{
+    background-color: #fff;
+    padding: 8px 0;
+    box-shadow: 0 2px 2px #efefef;
+}
+.sticky .logo{
+    background-image: url(img/logoLV.png);
+    width: 63px;
+    height: 65px;
+    margin-top: 10px;
+}
+.sticky .navbar-menu a{
+    color: #111;
+}
+.sticky .menu-toggler span{
+    background-color: #111;
+}
+.sticky .navbar-menu a:hover{
+    color:rgb(160, 228, 1);
+
+}
+.navbar-menu.active{
+    right: 0;
+    color:black;
+}
+.menu-toggler.active span:nth-child(1){
+    transform: rotate(-45deg);
+    top:4px;
+}
+.menu-toggler.active span:nth-child(2){
+    opacity: 0;
+}
+.menu-toggler.active span:nth-child(3){
+    transform: rotate(45deg);
+    bottom: 14px;
+}
+.navbar-menu.active2{
+    display: none;
+}
+
+.section-home{
+    height: 100vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/bg/6.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.section-home .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.section-home .content{
+    width: 100%;
+}
+.section-home .content h1{
+    font-size: 60px;
+    margin-bottom: 60px;
+    color:#FFF;
+    font-style: bold;
+}
+.section-home .content h2{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color:#FFF;
+}
+
+/* ----------------------------------------------  */
+/* BUTTONS  */
+/* ---------------------------------------------- */
+.btn,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+input[type=submit]{
+    width: 100%;
+    text-transform: uppercase;
+}
+.btn-info:link,
+.btn-info:visited{
+    border: 1px solid #000;
+    background-color: #000;
+    color: white;
+    margin-right: 15px;
+}
+.btn-info:hover,
+.btn-info:active{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn-black:link,
+.btn-black:visited,
+input[type=submit]{
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+
+    border-radius: 6px;
+}
+.btn-black:hover,
+.btn-black:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+
+    
+}
+
+.btn-talk:link,
+.btn-talk:visited{
+    text-decoration: none;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    display: inline-block;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    font-size: 70%;
+    padding: 12px 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFF;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 20px 44px;
+    border-radius: 30px;
+    font-weight: 400;
+    margin-top: 50px;
+
+}
+.btn-talk:hover,
+.btn-talk:active{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+
+.section-home .buttons{
+    margin-top: 60px;
+
+}
+.section-home .buttons a{
+    display: inline-block;
+    margin: 15px 30px;
+    color: rgb(160, 228, 1);
+    font-size: 15px;
+    font-weight: 500;
+    width: 180px;
+    border: 1px solid;
+    padding: 15px 0;
+    border-radius: 6px;
+    transition: .2s linear;
+}
+.section-home .buttons a:hover,
+.section-home .buttons a:nth-child(2){
+    background-color: rgb(160, 228, 1);
+    color: #000;
+   
+}
+.section-home .buttons a:nth-child(2):hover{
+    transform: scale(1.1) perspective(1px)
+}
+
+/* ----------------------------------------------  */
+/* ICONS  */
+/* ---------------------------------------------- */
+.icon-1,
+.icon-2,
+.icon-3{
+    position: relative;
+    /* Adjust these values accordingly */
+    top: -2px;
+    left: 5px;
+    display: block;
+    font-size: 135%;
+    float: left;
+    text-align: center; 
+    color:rgb(160, 228, 1);
+    /*color: rgb(152, 216, 1);*/
+}
+.checkmark{
+    color:#27a727;
+}
+.checkmark-false{
+    color:rgb(204, 6, 6);
+}
+.checkmark,
+.checkmark-false{
+    position: relative;
+    /* Adjust these values accordingly */
+    display: inline-block;
+    top:3px;
+
+    text-align: center;
+    width: 50px;
+}
+.icon-4{
+    display: inline-block;
+    width: 30px;
+    margin-right: 10px;
+    font-size: 100%;
+    text-align: center;
+    position: relative;
+    /* Adjust these values accordingly */
+    top: 5px;
+    left: 5px;
+    color: rgb(160, 228, 1)  ;
+}
+/* ----------------------------------------------  */
+/* FEATURES  */
+/* ---------------------------------------------- */
+.section-features{
+
+}
+.description-box p{
+    color: #888;
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    font-size: 60%;
+    font-weight: 400;
+    width: 100%;
+}
+.section-features h3{
+    font-size: 80%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.description-box{
+    background-color: #fff;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    height: 180px;
+    width: auto;
+    border-radius: 3%;
+
+}
+.description-box p{
+    margin-left: 6px;
+    font-weight: 200;
+    font-size: 80%;
+}
+/* ----------------------------------------------  */
+/* QUOTE*/
+/* ---------------------------------------------- */
+.section-quote{
+    padding:125px;
+
+    background-image: linear-gradient(#080808c5, #080808c5),url(img/image4.jpg);
+    background-color: #888;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+.quote-info{
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color:rgb(160, 228, 1);
+    /* color:rgb(179, 255, 0); */
+}
+.quote-info2{
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 80%;
+    font-style: italic;
+    color: grey;
+}
+
+/* ----------------------------------------------  */
+/* PLANS */
+/* ---------------------------------------------- */
+
+.plan-subtitle{
+    font-size: 80%;
+    font-weight: 200;
+    text-align: center;
+}
+.plan-box{
+    background-color: #fff;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #e6e6e6;
+    padding: 10px 0;
+    margin: 10px 10px;
+    margin-bottom: 20px;
+    height: 530px;
+    width: auto;
+    border-radius: 3%;
+}
+
+.plan-box div{
+    padding: 15px;
+ /*   border-bottom: 1px solid #e6e6e6; */
+}
+.first-plan-box{
+    background-color: rgb(231, 229, 229);
+    color: #000;
+}
+.second-plan-box,
+.second-plan-box h3{
+    background-color: rgb(160, 228, 1);
+    color:#000;
+}
+
+.third-plan-box,
+.third-plan-box h3{
+    background-color: #000;
+    color:#fff;
+}
+.plan-box div:first-child{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.plan-box div:last-child{
+    text-align: center;
+    border: 0;
+}
+.plan-price{
+    font-size: 150%;
+    font-weight: 600;
+    text-align: center;
+}
+.plan-box ul{
+    list-style: none;
+}
+
+.plan-box ul li{
+    padding: 10px 0;
+
+}
+.plan-box span{
+    font-size: 70%;
+    font-weight: 300;
+}
+
+/* ----------------------------------------------  */
+/* LETS TALK*/
+/* ---------------------------------------------- */
+.lets-talk-section{
+    padding:170px;
+
+    
+    background-image: linear-gradient(#000000c5, #000000c5),url(img/image1.jpg);
+    background-color: #888;
+    color: #fff;
+    background-size: cover;
+
+    background-position: center;
+    text-align: center;
+}
+.divider{
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    content: " ";
+    width: 80px;
+    margin-right: 15px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+h5 span{
+   font-weight: bold;
+}
+/* ----------------------------------------------  */
+/* FORM*/
+/* ---------------------------------------------- */
+.form-text,
+.form-text-2{
+    color: #888;
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    font-size: 65%;
+    font-weight: 400;
+    width: 80%;
+    text-decoration: none;
+}
+.form-text{
+    margin-bottom: 40px;
+}
+.form-text-2{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.form-icon-and-text{
+    margin-left: 20px;
+}
+.contact-form-2{
+    width:100%;
+    margin: 0 auto;
+    font-size: 80%;
+}
+.contact-item{
+    margin-bottom: 20px;
+}
+input[type=text],
+input[type=email],
+select,
+textarea{
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+}
+*:focus{
+    outline-color: none;
+}
+textarea{
+    height: 80px;
+}
+input[placeholder],
+textarea[placeholder],
+#plan-type{
+    font-size: 90%;
+    font-weight: 300;
+}
+
+/* ----------------------------------------------  */
+/* FOOTER */
+/* ---------------------------------------------- */
+footer{
+     background-color: rgb(250, 250, 250);
+     color:#000;    
+     padding: 20px;
+}
+.social-links,
+.contact-info{
+    list-style: none;
+    margin: 20px 0;
+}
+.contact-info{
+    float: left;
+    font-size: 90%;
+}
+.social-links{
+    display: inline-block;
+}
+.last-text{
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 80%;
+}
+.contact-info li,
+.social-links li{
+    text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.contact-info li{
+    padding-right:20px;
+}
+.social-links li a:link,
+.social-links li a:visited{
+    color:#000;
+    border:0;
+    transition: color 0.2s;
+    font-size: 160%;
+
+}
+.social-links .facebook:hover{                                                      
+    color: #1877f2;
+    transition: color 0.2s;
+}
+
+.social-links .instagram:hover{
+    color: #c32aa3;
+    transition: color 0.2s;
+}
+.social-links .linkedin:hover{                                                      
+    color: rgb(226, 0, 0);
+    transition: color 0.2s;
+}
+
+.makeDisappear{
+    display:none;
+}
+/* ----------------------------------------------  */
+/* TOP BUTTON*/
+/* ---------------------------------------------- */
+#topButton{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(160, 228, 1);
+    color:black;
+    border:none;
+    cursor:pointer;
+    display: none;
+}
